@@ -5,10 +5,51 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function publications_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_views_api().
  */
 function publications_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function publications_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: thumbnail_publications.
+  $styles['thumbnail_publications'] = array(
+    'label' => 'Thumbnail Publications',
+    'effects' => array(
+      3 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 200,
+          'height' => 200,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 0,
+          ),
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
 }
 
 /**
