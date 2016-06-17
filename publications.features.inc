@@ -33,8 +33,8 @@ function publications_image_default_styles() {
       3 => array(
         'name' => 'epsacrop_crop',
         'data' => array(
-          'width' => 200,
-          'height' => 200,
+          'width' => 220,
+          'height' => 220,
           'anchor' => 'center-center',
           'disable_scale' => 0,
           'jcrop_settings' => array(

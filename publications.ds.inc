@@ -84,10 +84,10 @@ function publications_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_cover',
-        1 => 'field_publication_date',
-        2 => 'body',
-        3 => 'field_publication_type',
+        0 => 'field_publication_date',
+        1 => 'field_cover',
+        2 => 'group_info',
+        3 => 'body',
         4 => 'field_publication_sector_referen',
         5 => 'field_publication_country_refere',
         6 => 'field_publication_file',
@@ -95,10 +95,10 @@ function publications_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'field_cover' => 'ds_content',
       'field_publication_date' => 'ds_content',
+      'field_cover' => 'ds_content',
+      'group_info' => 'ds_content',
       'body' => 'ds_content',
-      'field_publication_type' => 'ds_content',
       'field_publication_sector_referen' => 'ds_content',
       'field_publication_country_refere' => 'ds_content',
       'field_publication_file' => 'ds_content',
