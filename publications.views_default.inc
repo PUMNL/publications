@@ -515,6 +515,15 @@ function publications_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'pum-publications';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Publications';
+  $handler->display->display_options['menu']['weight'] = '-48';
+  $handler->display->display_options['menu']['name'] = 'menu-menu-topmenu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_publications');
   $translatables['publications'] = array(
     t('Master'),
     t('Publications'),
@@ -524,7 +533,6 @@ function publications_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Advanced options'),
     t('Select any filter and click on Apply to see results'),
     t('Items per page'),
     t('- All -'),
@@ -538,13 +546,14 @@ function publications_views_default_views() {
     t('Publication file'),
     t('<a class="download-publication" href="[field_publication_file]">Download</a>'),
     t('View'),
-    t('<a href="[field_publication_link-url]" class="view-publication" target="_new">View publication</a>'),
+    t('<a href="[field_publication_link-url]" class="view-publication" target="_blank">View publication</a>'),
     t('[field_publication_file]
 [field_publication_link]'),
     t('Publication type'),
     t('Sector'),
     t('Country'),
     t('Page'),
+    t('Block'),
   );
   $export['publications'] = $view;
 
